@@ -1,6 +1,6 @@
 // Keeps the app shell (this page, icons, manifest) available so the installed app opens fast.
 // The inventory data itself always comes live from Google Apps Script.
-var CACHE = 'lavitech-shell-v1';
+var CACHE = 'lavitech-shell-v2';
 var SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'favicon.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', function (e) {

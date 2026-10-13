@@ -46,6 +46,10 @@
 <script>
   // The inventory app itself runs on Google Apps Script; this page only makes it installable.
   var APP_URL = 'https://script.google.com/macros/s/AKfycbzqmrtC4I6-l3F5BRBeogOM50l54CeeKd_GMnl0ucp1blziLampMaFsH5MUNLjvJ1o6/exec';
+  // iPhone/iPad block Google's sign-in cookies inside an embedded frame (error 401),
+  // so on Apple devices open the app directly instead of embedding it.
+  var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) { location.replace(APP_URL); }
   var frame = document.getElementById('app');
   var splash = document.getElementById('splash');
   var hide = function () { splash.classList.add('gone'); };
